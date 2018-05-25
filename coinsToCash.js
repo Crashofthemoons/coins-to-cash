@@ -6,26 +6,10 @@ const piggyBank = {
 };
 let dollarAmount = 0;
 
-let quarterValue = () => {
-    let dollarAmount = piggyBank.quarters / 4;
+
+let totalValue = () => {
+    let dollarAmount = (piggyBank.quarters / 4) + (piggyBank.nickels / 20) + (piggyBank.dimes / 10) + (piggyBank.pennies / 100);
     return dollarAmount;
 }
 
-let nickelValue = () => {
-    let dollarAmount = piggyBank.nickels / 20;
-    return dollarAmount;
-}
-
-let dimeValue = () => {
-    let dollarAmount = piggyBank.dimes / 10;
-    return dollarAmount;
-}
-
-let pennyValue = () => {
-    let dollarAmount = piggyBank.pennies / 100;
-    return dollarAmount;
-}
-console.log(`$${quarterValue()}`)
-console.log(`$${nickelValue()}`)
-console.log(`$${dimeValue()}`)
-console.log(`$${pennyValue()}`)
+console.log(`$${totalValue()}`)
