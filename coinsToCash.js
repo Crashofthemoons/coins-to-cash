@@ -9,7 +9,7 @@ let dollarAmount = 0;
 
 let totalValue = () => {
     let dollarAmount = (piggyBank.quarters / 4) + (piggyBank.nickels / 20) + (piggyBank.dimes / 10) + (piggyBank.pennies / 100);
-    return dollarAmount;
+    return dollarAmount.toFixed(2);
 }
 
 console.log(`$${totalValue()}`)
