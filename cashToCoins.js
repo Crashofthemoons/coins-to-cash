@@ -1,26 +1,42 @@
-const dollarAmount = 1.27
-const piggyBank = {
-    quarters: 4,
-    dimes: 10,
-    nickels: 20,
-    pennies: 100
+// Now do the reverse. Convert the dollar amount into the coins that make up that dollar amount. The final result is an object with the correct number of quarters, dimes, nickels, and pennies.
+
+let dollarAmount = 1.19
+let coinValue = {
+
 }
 
 
-const coins = (dollar) => {
-    currentCoins = (dollar * piggyBank.quarters)
-    currentCoins -= (currentCoins * piggyBank.dimes)
-    currentCoins -= (currentCoins * piggyBank.nickles)
-    currentCoins -= (currentCoins * piggyBank.pennies)
 
-    return currentCoins.toFixed(2);
+const toCoin = (coin) => {
+
+    let remainingCoins = (coin * 100)
+    console.log(remainingCoins)
+
+    let toQuarters = Math.floor(remainingCoins / 25)
+    coinValue.quarters = toQuarters
+    remainingCoins -= toQuarters * 25
+    console.log(remainingCoins)
+
+    let toDimes = Math.floor(remainingCoins / 10)
+    coinValue.dimes = toDimes
+    remainingCoins -= toDimes * 10
+    console.log(remainingCoins)
+    
+    let toNickels = Math.floor(remainingCoins / 5)
+    coinValue.nickels = toNickels
+    remainingCoins -= toNickels * 5
+    console.log(remainingCoins)
+                
+    let toPennies = Math.floor(remainingCoins / 1)
+    coinValue.pennies = toPennies
+    remainingCoins -= toPennies * 1
+    console.log(remainingCoins)
+
+    
+
 }
 
-// const toQuarters = (dollar) => {
-//     dollar = dollar * coinValue[0];
-//     return dollar.toFixed(2);
-// }
-coins(dollarAmount)
+console.log(toCoin(dollarAmount))
+console.log(coinValue)
 
-console.log(piggyBank)
 
