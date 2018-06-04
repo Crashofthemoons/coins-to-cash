@@ -35,25 +35,24 @@ console.log(scores[0])
 // What is the highest score?
 console.log(scores[13])
 // Which grade had the most students achieve it? Use an if statement, and a currentGradeCount variable, in your for..in loop to see if the current grade's value is higher than the last one.
-
+let currentGradeCount = 0
+let currentGrade
 for (let key in grades) {
-    let currentGradeCount = 0
-    if (currentGradeCount < grades.A)  {
-        currentGradeCount = grades.A
+    if (currentGradeCount < grades[key])  {
+        currentGradeCount = grades[key]
+        currentGrade = key
     }
-     if (currentGradeCount < grades.B) {
-        currentGradeCount = grades.B
-    }
-    if (currentGradeCount < grades.C) {
-        currentGradeCount = grades.C
-    } else {
-        currentGradeCount = grades.D
-    }
-    console.log(currentGradeCount)
-    if (currentGradeCount === grades.key) {
-        console.log(grades.key)
-    }
+    
 }
 
+console.log(currentGrade)
 // Which grade had the fewest students achieve it?
-
+let currentGradeCount1 = 14
+let currentGrade1
+for (let key in grades) {
+    if (currentGradeCount1 > grades[key]) {
+        currentGradeCount1 = grades[key]
+        currentGrade1 = key
+    }
+}
+console.log(currentGrade1)
